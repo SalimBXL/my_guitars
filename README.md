@@ -9,11 +9,6 @@ BLANK is template for Ruby On Rails projects.
 * Ruby 3.2.2
 * Rails 7.1.2
 
-## Fork the project
-```
-...
-```
-
 ## Database
 Database is Postgresql.
 
@@ -43,13 +38,7 @@ echo 'THEME_COLOR: "[COLOR]"' >> ./.env.yml
 ```
 
 ## Run the test suite
-### Test the models
 ```
-rails test test/models
+rails test test
 ```
-### Test the controllers
-```
-rails test test/controllers
-```
-
 ## Log in the app
