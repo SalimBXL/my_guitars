@@ -39,6 +39,11 @@ bmg.update!(website: "http://")
 
 epiphone = Brand.where(name: "Epiphone").first_or_initialize
 epiphone.update!(website: "http://")
+standard = Model.create!(name:"Les Paule Standard", style: :single_cut, brand: epiphone)
+Model.create!(name:"Les Paule Standard 50s", style: :single_cut, brand: epiphone)
+Model.create!(name:"Les Paule Standard 60s", style: :single_cut, brand: epiphone)
+custom = Model.create!(name:"Les Paule Custom", style: :single_cut, brand: epiphone)
+Model.create!(name:"Les Paule Junior", style: :single_cut, brand: epiphone)
 
 fender = Brand.where(name: "Fender").first_or_initialize
 fender.update!(website: "http://")
@@ -48,3 +53,15 @@ gibson.update!(website: "http://")
 
 ibanez = Brand.where(name: "Ibanez").first_or_initialize
 ibanez.update!(website: "http://")
+
+
+
+Guitar.create!(
+  name: "My first guitar",
+  brand: epiphone,
+  model: standard,
+  purchase_year: 2009,
+  second_hand: false,
+  series_number: "09xxx",
+  user: user_regular
+)

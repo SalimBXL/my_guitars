@@ -4,11 +4,12 @@ class BrandsController < ApplicationController
 
   # GET /brands or /brands.json
   def index
-    @brands = Brand.all
+    @brands = Brand.order(:name)
   end
 
   # GET /brands/1 or /brands/1.json
   def show
+    @models = @brand.models.order(:name)
   end
 
   # GET /brands/new

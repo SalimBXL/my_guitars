@@ -33,6 +33,14 @@
    font-size: 24px;
  }
 
+ .guitar-picture {
+    width: 410px
+ }
+
+ .guitar-background {
+  
+ }
+
  @media screen and (max-width: 480px) {
    #app-title {
       font-size: 28px;
@@ -41,5 +49,24 @@
     #app-subtitle {
       font-size: 16px;
       text-align: center;
-    } 
+    }
+    
+    .guitar-picture {
+      width: 345px
+   }
  }
+
+ @media screen and (max-width: 770px) {
+  #app-title {
+     font-size: 28px;
+   }
+  
+   #app-subtitle {
+     font-size: 16px;
+     text-align: center;
+   }
+   
+   .guitar-picture {
+     width: 325px
+  }
+}

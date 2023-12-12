@@ -1,52 +1,50 @@
-<div id="<%= dom_id guitar %>">
-  <p>
-    <strong>Model:</strong>
-    <%= guitar.model_id %>
-  </p>
 
-  <p>
-    <strong>Brand:</strong>
-    <%= guitar.brand_id %>
-  </p>
 
-  <p>
-    <strong>Name:</strong>
-    <%= guitar.name %>
-  </p>
+<div id="<%= dom_id guitar %>" class="w3-row">
 
-  <p>
-    <strong>Description:</strong>
-    <%= guitar.description %>
-  </p>
+  <div class="w3-col m6 l5 w3-card-4 w3-round w3-center">
+    <% if guitar.picture.present? %>
+      <%= image_tag guitar.picture, alt: "Guitar Picture", class: "guitar-picture w3-center" %>
+    <% else %>
+      <%= image_tag "shadow.png", alt: "Guitar Picture", class: "guitar-picture w3-center" %>
+    <% end %>
+  </div>
 
-  <p>
-    <strong>Series number:</strong>
-    <%= guitar.series_number %>
-  </p>
+  <div class="w3-col m5 l6 w3-padding w3-margin">  
+    <h1><%= guitar.name %></h1>
 
-  <p>
-    <strong>Purchase date:</strong>
-    <%= guitar.purchase_date %>
-  </p>
-
-  <p>
-    <strong>Purchase year:</strong>
-    <%= guitar.purchase_year %>
-  </p>
-
-  <p>
-    <strong>Second hand:</strong>
-    <%= guitar.second_hand %>
-  </p>
-
-  <p>
-    <strong>Shop name:</strong>
-    <%= guitar.shop_name %>
-  </p>
-
-  <p>
-    <strong>Picture:</strong>
-    <%= guitar.picture %>
-  </p>
-
+    <h3>Specifications</h3>
+    <table class="w3-table w3-card-2 w3-round">
+      <tr>
+        <td><strong>Model</strong></td>
+        <td>&nbsp;</td><td><%= "#{guitar.brand.name} #{guitar.model.name}" %></td>
+      </tr>
+      <tr>
+        <td><strong>Series Number</strong></td>
+        <td>&nbsp;</td><td><code><%= guitar.series_number %></code></td>
+      </tr>
+      <tr>
+        <td><strong>Purchase Date</strong></td>
+        <td>&nbsp;</td><td><%= guitar.purchase_date.present? ? guitar.purchase_date : guitar.purchase_year %></td>
+      </tr>
+    </table>
+    
+    <% if guitar.description.present? %>
+      <hr />
+      <h3>Description</h3>
+      <p>
+        <%= guitar.description %>
+      </p>
+    <% end %>
+    
+    <% if guitar.second_hand || guitar.shop_name.present? %>
+      <hr />
+      <% if guitar.second_hand %>
+        <p>Second hand</p>
+      <% end %>
+      <% if guitar.shop_name.present? %>
+        <p><strong>Shop name:</strong><%= guitar.shop_name %></p>
+      <% end %>
+    <% end %>
+  </div>
 </div>

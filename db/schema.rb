@@ -25,18 +25,20 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_12_172952) do
   create_table "guitars", force: :cascade do |t|
     t.bigint "model_id", null: false
     t.bigint "brand_id", null: false
-    t.string "name"
+    t.bigint "user_id", null: false
+    t.string "name", null: false
     t.text "description"
     t.string "series_number"
     t.date "purchase_date"
-    t.integer "purchase_year"
-    t.boolean "second_hand"
+    t.integer "purchase_year", null: false
+    t.boolean "second_hand", default: false, null: false
     t.string "shop_name"
     t.string "picture"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["brand_id"], name: "index_guitars_on_brand_id"
     t.index ["model_id"], name: "index_guitars_on_model_id"
+    t.index ["user_id"], name: "index_guitars_on_user_id"
   end
 
   create_table "models", force: :cascade do |t|
@@ -79,6 +81,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_12_172952) do
 
   add_foreign_key "guitars", "brands"
   add_foreign_key "guitars", "models"
+  add_foreign_key "guitars", "users"
   add_foreign_key "models", "brands"
   add_foreign_key "posts", "users", column: "author_id"
 end

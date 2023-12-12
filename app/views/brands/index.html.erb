@@ -8,7 +8,7 @@
   <thead class="w3-hide-small">
     <tr>
       <th>Brand Name</th>
-      <th>Website</th>
+      <th class="w3-hide-small">Website</th>
       <th></th>
     </tr>
   </thead>
@@ -17,10 +17,10 @@
       <tr>
         <td><%= brand.name %></td>
         <td class="w3-hide-small"><%= brand.website %></td>
-        <td title="View models">
-          <%= link_to "<i class='material-symbols-rounded'>visibility</i>".html_safe, brand, class: "w3-button" %>
-          <span title="Edit"><%= link_to "<i class='material-symbols-rounded'>edit</i>".html_safe, "#", class: "w3-button" %></span>
-          <span title="Delete"><%= link_to "<i class='material-symbols-rounded'>delete</i>".html_safe, "#", class: "w3-button" %></span>
+        <td class="w3-right">
+          <%= link_to "<i class='material-symbols-rounded'>visibility</i>".html_safe, brand, title: "View models" %>
+          <%= link_to "<i class='material-symbols-rounded'>edit</i>".html_safe, "#", title: "Edit" %>
+          <%= link_to "<i class='material-symbols-rounded'>delete</i>".html_safe, "#", title: "Delete" %>
         </td>
       </tr>
     <% end %>

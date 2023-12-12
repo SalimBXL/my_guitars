@@ -2,6 +2,29 @@
 
 <%= render @brand %>
 
+<h3>Models</h3>
+
+<table id="models" class="w3-table-all w3-hoverable">
+  <thead>
+    <tr>
+      <th>Model</th>
+      <th>Style</th>
+      <th class="w3-hide-small">Description</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @models.each do |model| %>
+      <tr>
+        <td><%= model.name %></td>
+        <td><%= model.style %></td>
+        <td class="w3-hide-small"><%= model.description %></td>
+        <td class="w3-right"><%= link_to "<i class='material-symbols-rounded'>visibility</i>".html_safe, guitars_path(model: model), class: "w3-button", title: "View the guitars" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
 <div>
   <%= link_to "Edit this brand", edit_brand_path(@brand) %> |
   <%= link_to "Back to brands", brands_path %>

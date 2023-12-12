@@ -5,7 +5,13 @@ class GuitarsController < ApplicationController
 
   # GET /guitars or /guitars.json
   def index
-    @guitars = Guitar.all
+    if params[:model].present?
+      @model = Model.find(params[:model])
+      @guitars = Guitar.where(model: params[:model])
+    else
+      @model = nil
+      @guitars = Guitar.all
+    end
   end
 
   # GET /guitars/1 or /guitars/1.json

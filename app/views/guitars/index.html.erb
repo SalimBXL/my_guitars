@@ -1,14 +1,34 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Guitars</h1>
 
-<div id="guitars">
-  <% @guitars.each do |guitar| %>
-    <%= render guitar %>
-    <p>
-      <%= link_to "Show this guitar", guitar %>
-    </p>
-  <% end %>
-</div>
+<% if @model.present? %>
+  <h1><%= @model.brand.name %></h1>
+  <h2><%= @model.name %></h2>
+<% else %>
+  <h1>Guitars</h1>
+<% end %>
+
+<%= link_to "New guitar", new_guitar_path, class: "w3-right" %>
+
+<table id="guitars" class="w3-table-all w3-hoverable">
+  <thead>
+    <tr>
+      <th>Model</th>
+      <th>Name</th>
+      <th class="w3-hide-small">Purchase Date</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @guitars.each do |guitar| %>
+      <tr>
+        <td><%= "#{guitar.brand.name} #{guitar.model.name}" %></td>
+        <td><%= guitar.name %></td>
+        <td class="w3-hide-small"><%= guitar.purchase_year %></td>
+        <td title="View this guitar"><%= link_to "<i class='material-symbols-rounded'>visibility</i>".html_safe, guitar %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
 <%= link_to "New guitar", new_guitar_path %>
