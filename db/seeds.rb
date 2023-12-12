@@ -22,4 +22,29 @@ user_regular.update!(
   password_confirmation: 'password'
 )
 
+squier = Brand.where(name: "Squier").first_or_initialize
+squier.update!(website: "http://")
 
+jd = Brand.where(name: "Jack & Danny").first_or_initialize
+jd.update!(website: "http://")
+
+yamaha = Brand.where(name: "Yamaha").first_or_initialize
+yamaha.update!(website: "http://")
+
+boss = Brand.where(name: "Boss").first_or_initialize
+boss.update!(website: "http://")
+
+bmg = Brand.where(name: "Brian May Guitar").first_or_initialize
+bmg.update!(website: "http://")
+
+epiphone = Brand.where(name: "Epiphone").first_or_initialize
+epiphone.update!(website: "http://")
+
+fender = Brand.where(name: "Fender").first_or_initialize
+fender.update!(website: "http://")
+
+gibson = Brand.where(name: "Gibson").first_or_initialize
+gibson.update!(website: "http://")
+
+ibanez = Brand.where(name: "Ibanez").first_or_initialize
+ibanez.update!(website: "http://")

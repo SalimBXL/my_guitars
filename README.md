@@ -16,9 +16,9 @@ Database is Postgresql.
 The database configuration is stored into a Yaml type file at the root of the project. This file must be into the .gitignore file!
 ```
 touch ./.env.yml
-echo 'DATABASE_PROD: "BLANK_DATABASE"' >> ./.env.yml
-echo 'DATABASE_DEV: "BLANK_DATABASE_dev"' >> ./.env.yml
-echo 'DATABASE_TEST: "BLANK_DATABASE_test"' >> ./.env.yml
+echo 'DATABASE_PROD: "MG_DATABASE"' >> ./.env.yml
+echo 'DATABASE_DEV: "MG_DATABASE_dev"' >> ./.env.yml
+echo 'DATABASE_TEST: "MG_DATABASE_test"' >> ./.env.yml
 echo 'DATABASE_PORT: "5432"' >> ./.env.yml
 echo 'DATABASE_HOST: "localhost"' >> ./.env.yml
 echo 'DATABASE_USERNAME: "[USERNAME]"' >> ./.env.yml

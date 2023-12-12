@@ -1,0 +1,30 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Brands</h1>
+
+<div class="w3-right"><%= link_to "New brand", new_brand_path %></div>
+
+<table id="brands" class="w3-table-all w3-hoverable">
+  <thead class="w3-hide-small">
+    <tr>
+      <th>Brand Name</th>
+      <th>Website</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @brands.each do |brand| %>
+      <tr>
+        <td><%= brand.name %></td>
+        <td class="w3-hide-small"><%= brand.website %></td>
+        <td title="View models">
+          <%= link_to "<i class='material-symbols-rounded'>visibility</i>".html_safe, brand, class: "w3-button" %>
+          <span title="Edit"><%= link_to "<i class='material-symbols-rounded'>edit</i>".html_safe, "#", class: "w3-button" %></span>
+          <span title="Delete"><%= link_to "<i class='material-symbols-rounded'>delete</i>".html_safe, "#", class: "w3-button" %></span>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "New brand", new_brand_path %>

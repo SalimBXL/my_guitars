@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  model: one
+  brand: one
+  name: MyString
+  description: MyText
+  series_number: MyString
+  purchase_date: 2023-12-12
+  purchase_year: 1
+  second_hand: false
+  shop_name: MyString
+  picture: MyString
+
+two:
+  model: two
+  brand: two
+  name: MyString
+  description: MyText
+  series_number: MyString
+  purchase_date: 2023-12-12
+  purchase_year: 1
+  second_hand: false
+  shop_name: MyString
+  picture: MyString

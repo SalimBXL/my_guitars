@@ -1,5 +1,5 @@
-<header class="w3-display-container w3-wide w3-padding" id="home">
-    <h1>Rails App Title</h1>
-    <p>Rails App subtitle</p>
+<header id="app-header" class="w3-display-container w3-wide w3-padding w3-text-white">
+    <h1 id="app-title"><%= t("views.home.index.title").titleize %></h1>
+    <p id="app-subtitle"><%= t("views.home.index.subtitle").capitalize %></p>
     <div class=" w3-tag w3-margin w3-theme w3-display-topright"><%= "Admin" if current_user&.admin? %></div>
 </header>

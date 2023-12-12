@@ -18,3 +18,28 @@
     font-family: 'Montserrat', sans-serif;
     /* font-family: 'Roboto', sans-serif; */
  }
+
+ #app-header {
+   background-image: url("mg_background.png");
+   background-position: center;
+ }
+
+ #app-title {
+   font-size: 60px;
+   font-weight: bold;
+ }
+
+ #app-subtitle {
+   font-size: 24px;
+ }
+
+ @media screen and (max-width: 480px) {
+   #app-title {
+      font-size: 28px;
+    }
+   
+    #app-subtitle {
+      font-size: 16px;
+      text-align: center;
+    } 
+ }

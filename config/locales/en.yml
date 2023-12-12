@@ -42,8 +42,8 @@ en:
   views:
     home:
       index:
-        title: "HOME"
-        welcome: "Welcome in this Rails App."
+        title: "My Awsome Guitars"
+        subtitle: "Show your beautyfull babies to the world!"
     posts:
       index:
         title: "Posts"
